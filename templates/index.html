@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Template</title>
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/comments/add">Comments</a></li>
+        </ul>
+    </nav>
+    <h1>Welcome to my Flask Template</h1>
+    <p>This is the index page.</p>
+    <!-- Display comments here -->
+    {% if comments %}
+    {% for comment in comments %}
+    <p>{{ comment.author }} said: {{ comment.comment }}</p>
+    {% endfor %}
+    {% else %}
+    <p>No comments yet.</p>
+    {% endif %}
+</body>
+</html>
